@@ -42,7 +42,7 @@ export default function Login(props) {
         event.preventDefault();
         axios({
             method: "get",
-            url: "api/user/login",
+            url: "https://humanlyapp.herokuapp.com/api/user/login",
             params: { username: username , password: password}
         })
         .then((res => {

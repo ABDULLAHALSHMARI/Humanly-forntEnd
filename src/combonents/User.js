@@ -26,7 +26,7 @@ function handlesetusername(event) {
     event.preventDefault();
     axios({
         method:"post",
-        url:"api/user/add",
+        url:"https://humanlyapp.herokuapp.com/api/user/add",
         data:mydata
         
     })

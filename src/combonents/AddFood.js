@@ -30,7 +30,7 @@ export default function AddFood() {
     event.preventDefault();
     axios({
       method: "post",
-      url: "api/food/add",
+      url: "https://humanlyapp.herokuapp.com/api/food/add",
       data: myFood
     })
   }
