@@ -13,7 +13,7 @@ export default class Clothes extends Component {
   }
   
   componentDidMount() {
-    axios.get("/api/clothes")
+    axios.get("https://humanlyapp.herokuapp.com/api/clothes")
      .then(response => {
      const clothes=  response.data
      this.setState({clothes});
@@ -21,7 +21,7 @@ export default class Clothes extends Component {
   }
 
   deleteContact(id) {
-    axios.delete(`/api/clothes/delete/${id}`)
+    axios.delete(`https://humanlyapp.herokuapp.com/api/clothes/delete/${id}`)
       .then(res => {
       const clothes = this.state.clothes.filter(item => item.id !== id);
       alert("you takke it")
@@ -34,7 +34,7 @@ export default class Clothes extends Component {
     return (
       <div>
         <h1 className="work-title"> List  Of   Clothes : </h1>
-        <Link to="/AddClothes"><button>Add Clothes</button></Link>
+        <Link to="https://humanlyapp.herokuapp.com/AddClothes"><button>Add Clothes</button></Link>
           <hr />
           <div className="flex-container">
           {this.state.clothes.map((item => (
@@ -56,7 +56,7 @@ export default class Clothes extends Component {
       return (
       <div>
         <h1 className="work-title"> List  Of   Clothes : </h1>
-        <Link to="/AddClothes"><button>Add Clothes</button></Link>
+        <Link to="https://humanlyapp.herokuapp.com/AddClothes"><button>Add Clothes</button></Link>
           <hr />
           <div className="flex-container">
           {this.state.clothes.map((item => (
@@ -66,7 +66,7 @@ export default class Clothes extends Component {
                   <h2>{item.name}</h2>
                   <p>{item.title}</p>
                   <p>{item.size}</p>
-                  <Link to="/Login"><button>Get It</button></Link>
+                  <Link to="https://humanlyapp.herokuapp.com/Login"><button>Get It</button></Link>
                   
                   <hr />
                   </div>

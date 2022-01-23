@@ -11,7 +11,7 @@ export default class ElectricDev extends Component {
   }
   
   componentDidMount() {
-    axios.get("/api/ElectricDevice")
+    axios.get("https://humanlyapp.herokuapp.com/api/ElectricDevice")
      .then(response => {
      const Device=  response.data
      this.setState({Device});
@@ -20,7 +20,7 @@ export default class ElectricDev extends Component {
 
   deleteContact(id) {
       
-    axios.delete(`/api/ElectricDevice/delete/${id}`)
+    axios.delete(`https://humanlyapp.herokuapp.com/api/ElectricDevice/delete/${id}`)
       .then(res => {
       const Device = this.state.Device.filter(item => item.id !== id);
       this.setState({ Device });
@@ -32,7 +32,7 @@ export default class ElectricDev extends Component {
     return (
       <div>
         <h1 className="work-title"> List  Of   Devices : </h1>
-        <Link to="/AddDevice"><button>Add Electric Device</button></Link>
+        <Link to="https://humanlyapp.herokuapp.com/AddDevice"><button>Add Electric Device</button></Link>
           <hr />
           <div className="flex-container">
           {this.state.Device.map((item => (

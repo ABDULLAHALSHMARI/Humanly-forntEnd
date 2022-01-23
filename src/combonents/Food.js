@@ -19,7 +19,7 @@ export default class Food extends Component {
 
 
   componentDidMount() {
-    axios.get("/api/food")
+    axios.get("https://humanlyapp.herokuapp.com/api/food")
       .then(response => {
         const food = response.data
         this.setState({ food });
@@ -28,12 +28,12 @@ export default class Food extends Component {
 
   deleteContact(id) {
     alert("You Take it")
-    axios.post(`/api/story/add/${id}`)
+    axios.post(`https://humanlyapp.herokuapp.com/api/story/add/${id}`)
       .then(res => {
         const story = this.State.story.filter(item => item.id !== id);
         this.setState({ story });
       })
-    axios.delete(`/api/food/delete/${id}`)
+    axios.delete(`https://humanlyapp.herokuapp.com/api/food/delete/${id}`)
       .then(res => {
         const food = this.state.food.filter(item => item.id !== id);
         this.setState({ food });
@@ -46,7 +46,7 @@ export default class Food extends Component {
       return (
         <div >
           
-          <Link to="/AddFood"><button>Add Food</button></Link>
+          <Link to="https://humanlyapp.herokuapp.com/AddFood"><button>Add Food</button></Link>
           <h1 className="work-title" > List  Of   Food : </h1>
           <hr />
           <div className="flex-container">

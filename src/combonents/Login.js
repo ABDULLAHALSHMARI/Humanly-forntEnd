@@ -48,7 +48,7 @@ export default function Login(props) {
         .then((res => {
             console.log(res.data);
             if(res.data == "authenticated"){
-               
+               <Link to="home"></Link>
                localStorage.setItem("logined","yes")
             //    navigate("/")
              window.open("/","_self")
